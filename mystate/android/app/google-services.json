@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260852186197",
+    "project_id": "wallpaper-2bbc1",
+    "storage_bucket": "wallpaper-2bbc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260852186197:android:1435a93d9928dcc457e8dc",
+        "android_client_info": {
+          "package_name": "com.example.mystate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4Zt6_egz7VJithpFisqSvqLZkBc_fYWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
