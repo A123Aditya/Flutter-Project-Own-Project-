@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mystate/Api/pexel.dart';
 import 'package:mystate/Model/photos_Model.dart';
-
+import 'package:mystate/Screen/full%20screen/FullScreen.dart';
 
 class Grid_View extends StatefulWidget {
   const Grid_View({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _Grid_ViewState extends State<Grid_View> {
   Future<void> fetchcurated() async {
     final searchResult = await curated.fetchCurated();
     setState(() {
-      photo = searchResult.photos??[];
+      photo = searchResult.photos ?? [];
     });
   }
 
@@ -35,11 +35,21 @@ class _Grid_ViewState extends State<Grid_View> {
       itemCount: photo.length,
       itemBuilder: (context, index) {
         final image = photo[index];
-        return Container(
-          //margin: EdgeInsets.all(5),
-          child: Image.network(
-            image.src!.portrait ?? '',
-            fit: BoxFit.cover,
+        return InkWell(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      FullScreen(imageurl: photo[index].src!.original ?? ''),
+                ));
+          },
+          child: Container(
+            //margin: EdgeInsets.all(5),
+            child: Image.network(
+              image.src!.portrait ?? '',
+              fit: BoxFit.cover,
+            ),
           ),
         );
       },
